@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Session;
 use Illuminate\Http\Request;
+use App\Page;
 
 class UploadController extends Controller
 {
-    public function __invoke(Request $request)
+    public function upload(Request $request)
     {
       $file = $request->file('file');
       $fileName = time() . '.' . $file->getClientOriginalExtension();
